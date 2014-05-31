@@ -28,7 +28,7 @@ THE SOFTWARE.
 class CCGestureRecognizer : public cocos2d::CCLayer
 {
 public:
-    CCGestureRecognizer();
+    CCGestureRecognizer(int touchPriority = -256);
     ~CCGestureRecognizer();
     void setTarget(cocos2d::CCObject * tar, cocos2d::SEL_CallFuncO sel);
     
@@ -60,6 +60,8 @@ private:
     cocos2d::SEL_CallFuncO selector;
     cocos2d::CCObject * target;
     cocos2d::CCTouchDispatcher * dispatcher;
+
+	int touchPriority;
 };
 
 #endif

@@ -51,6 +51,8 @@ public:
     bool init();
     ~CCSwipeGestureRecognizer();
     CREATE_FUNC(CCSwipeGestureRecognizer);
+	CCSwipeGestureRecognizer();
+	CCSwipeGestureRecognizer(int touchPriority);
     
     virtual bool ccTouchBegan(cocos2d::CCTouch * pTouch, cocos2d::CCEvent * pEvent);
     virtual void ccTouchMoved(cocos2d::CCTouch * pTouch, cocos2d::CCEvent * pEvent){};

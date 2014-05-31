@@ -36,6 +36,15 @@ CCSwipeGestureRecognizer::~CCSwipeGestureRecognizer()
     
 }
 
+CCSwipeGestureRecognizer::CCSwipeGestureRecognizer()
+{
+}
+
+CCSwipeGestureRecognizer::CCSwipeGestureRecognizer(int touchPriority):CCGestureRecognizer(touchPriority)
+{
+	CCSwipeGestureRecognizer::init();
+}
+
 bool CCSwipeGestureRecognizer::checkSwipeDirection(CCPoint p1, CCPoint p2, int & dir)
 {
     bool right = p2.x-p1.x>=kSwipeMinDistance;

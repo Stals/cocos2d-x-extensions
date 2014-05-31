@@ -24,7 +24,7 @@ THE SOFTWARE.
 
 USING_NS_CC;
 
-CCGestureRecognizer::CCGestureRecognizer()
+CCGestureRecognizer::CCGestureRecognizer(int touchPriority):touchPriority(touchPriority)
 {
     isRecognizing = false;
     
@@ -79,7 +79,7 @@ CCSet * CCGestureRecognizer::createSetWithTouch(CCTouch * pTouch)
 
 void CCGestureRecognizer::registerWithTouchDispatcher()
 {
-    dispatcher->addTargetedDelegate(this, -256, false);
+    dispatcher->addTargetedDelegate(this, touchPriority, false);
 }
 
 bool CCGestureRecognizer::isPositionBetweenBounds(CCPoint pos)
