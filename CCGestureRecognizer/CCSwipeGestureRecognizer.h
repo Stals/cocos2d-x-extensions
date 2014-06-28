@@ -25,7 +25,7 @@ THE SOFTWARE.
 
 #include "CCGestureRecognizer.h"
 
-#define kSwipeMaxDuration 300
+#define kSwipeMaxDuration 1000
 #define kSwipeMinDistance 60
 
 typedef enum {

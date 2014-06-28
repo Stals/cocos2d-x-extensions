@@ -52,7 +52,20 @@ bool CCSwipeGestureRecognizer::checkSwipeDirection(CCPoint p1, CCPoint p2, int &
     bool down = p1.y-p2.y>=kSwipeMinDistance;
     bool up = p2.y-p1.y>=kSwipeMinDistance;
     
-    if (right) {
+	if (up) {
+        if ((direction & kSwipeGestureRecognizerDirectionUp) == kSwipeGestureRecognizerDirectionUp) {
+            dir = kSwipeGestureRecognizerDirectionUp;
+            return true;
+        }
+    }
+	else if (down) {
+        if ((direction & kSwipeGestureRecognizerDirectionDown) == kSwipeGestureRecognizerDirectionDown) {
+            dir = kSwipeGestureRecognizerDirectionDown;
+            return true;
+        }
+    }
+
+    else if (right) {
         if ((direction & kSwipeGestureRecognizerDirectionRight) == kSwipeGestureRecognizerDirectionRight) {
             dir = kSwipeGestureRecognizerDirectionRight;
             return true;
@@ -61,18 +74,6 @@ bool CCSwipeGestureRecognizer::checkSwipeDirection(CCPoint p1, CCPoint p2, int &
     else if (left) {
         if ((direction & kSwipeGestureRecognizerDirectionLeft) == kSwipeGestureRecognizerDirectionLeft) {
             dir = kSwipeGestureRecognizerDirectionLeft;
-            return true;
-        }
-    }
-    else if (up) {
-        if ((direction & kSwipeGestureRecognizerDirectionUp) == kSwipeGestureRecognizerDirectionUp) {
-            dir = kSwipeGestureRecognizerDirectionUp;
-            return true;
-        }
-    }
-    else if (down) {
-        if ((direction & kSwipeGestureRecognizerDirectionDown) == kSwipeGestureRecognizerDirectionDown) {
-            dir = kSwipeGestureRecognizerDirectionDown;
             return true;
         }
     }
